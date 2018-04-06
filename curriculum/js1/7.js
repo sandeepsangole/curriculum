@@ -6,8 +6,30 @@
  */
 
 const solution = (a) => {
-  return 0;
+  if(a === 1) return false;
+
+  if(a === 2) return true;
+
+  if(isPrime(a , parseInt(a/2))){
+      return true;
+  }
+
+  return false;  
 };
+
+const isPrime = (no,div) => {
+  
+  if(div === 0 || no === 1){
+    return true;
+  }
+
+  if(no%div === 0 && div !== 1){
+      return false;
+  }
+    
+  return isPrime(no , div - 1);
+
+}
 
 module.exports = {
   solution,

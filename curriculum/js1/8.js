@@ -6,7 +6,24 @@
  */
 
 const solution = (a, b) => {
-  return 0;
+  if(a === 0 || b === 0){
+    return 0;
+  }
+
+  if(a === 1 || b === 1){
+    return 1;
+  }
+
+  if(a === b){
+      return a;
+  }
+
+  if(a > b){
+    return solution(a - b, b);
+  } else {
+    return solution(a, b - a);
+  }
+
 };
 
 module.exports = {
